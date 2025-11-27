@@ -195,7 +195,7 @@
 <style>
   /* Exhibit styling */
   .exhibit {
-    max-width:720px;
+    max-width:540px;
     margin:25px 0;
     border:10px solid #325;
     border-radius:10px;
@@ -206,7 +206,7 @@
   }
   .exhibit img {
     max-width:1000%;
-    height:auto;
+    height:540;
     border:5px solid #ccc;
     border-radius:5px;
     box-shadow:0 0 25px rgba(240,195,50,0.5);
