@@ -7,22 +7,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@800&display=swap" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(180deg, #0d0d0d, #1a1a1a); /* dark spooky background */
+      background: linear-gradient(180deg, #0d0d0d, #1a1a1a);
       color: #ffa64d;
       font-family: 'Google Sans Code', sans-serif;
       text-align: left;
       margin: 0;
       padding: 40px;
+      font-weight: 800;
     }
 
+    /* Spooky Orange Text Effect */
     header, h2 {
-      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 2px;
       color: #ffa64d;
-      text-shadow: 2px 2px 4px #000,
-                   0 0 10px rgba(255, 117, 24, 0.8),
-                   0 0 20px rgba(255, 117, 24, 0.6);
+      text-shadow:
+        2px 2px 4px #000,
+        0 0 10px rgba(255, 117, 24, 0.8),
+        0 0 20px rgba(255, 117, 24, 0.6);
     }
 
     header {
@@ -31,6 +33,25 @@
       border-bottom: 5px solid #ffa64d;
       padding-bottom: 11px;
       box-shadow: 0 5px 11px rgba(255, 125, 25, 0.5);
+    }
+
+    .controls {
+      margin-bottom: 20px;
+      display: inline-block;
+      background: #222;
+      border-radius: 50px;
+      padding: 10px 20px;
+      box-shadow: 0 0 12px rgba(255, 125, 25, 0.5);
+    }
+    .btn {
+      display: inline-block;
+      margin: 0 8px;
+      font-size: 1.2em;
+      color: #ffa64d;
+      background: #333;
+      padding: 6px 10px;
+      border-radius: 50%;
+      box-shadow: 0 0 6px rgba(255, 125, 25, 0.5);
     }
 
     .station-card {
@@ -75,88 +96,104 @@
     footer a {
       color: #ffa64d;
       text-decoration: none;
-      font-weight: 800;
-    }
-    footer a:hover {
-      color: #ffa64d;
-    }
-
-    .controls {
-      margin-bottom: 20px;
-      display: inline-block;
-      background: #222;
-      border-radius: 50px;
-      padding: 10px 20px;
-      box-shadow: 0 0 12px rgba(255, 125, 25, 0.5);
-    }
-    .btn {
-      display: inline-block;
-      margin: 0 8px;
-      font-size: 1.2em;
-      color: #ffa64d;
-      background: #333;
-      padding: 6px 10px;
-      border-radius: 50%;
-      box-shadow: 0 0 6px rgba(255, 125, 25, 0.5);
-      font-weight: 800;
     }
 
     /* Exhibit styling */
-    .exhibit {
-      max-width:720px;
-      margin:25px 0;
-      border:10px solid #325;
-      border-radius:10px;
-      background:#fafafa;
-      box-shadow:0 10px 25px rgba(0,0,0,0.25);
-      padding:25px;
-      transition:border-color 0.5s ease, box-shadow 0.5s ease;
+    .catalogue {
+      max-width: 720px;
+      margin: 40px auto;
+      text-align: left;
     }
-    .exhibit img {
-      max-width:540px;
-      width:100%;
-      height:auto;
-      border:5px solid #ccc;
-      border-radius:5px;
-      box-shadow:0 0 25px rgba(240,195,50,0.5);
-      transition:all 0.4s ease;
-      display:block;
+
+    nav.catalogue-index {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      margin-bottom: 25px;
+      padding: 15px;
+      background: #f0f0f0;
+      border: 5px solid #325;
+      border-radius: 10px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.2);
     }
-    .exhibit img:hover {
-      max-width:720px;
+    nav.catalogue-index h3 {
+      margin-top: 0;
+      color: #125;
     }
-    .exhibit figcaption {
-      margin-top:15px;
-      padding:10px 15px;
-      background:#111;
-      color:#fff;
-      border-radius:10px;
-      box-shadow:inset 0 0 10px rgba(255,255,255,0.5),
-                 0 0 10px rgba(240,195,50,0.5);
-      font-size:1em;
-      letter-spacing:1px;
+    nav.catalogue-index ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      line-height: 2;
     }
-    .exhibit figcaption span {
-      color:#F0C332;
+    nav.catalogue-index li a {
+      color: #F0C332;
+      text-decoration: none;
+      transition: all 0.2s ease;
     }
-    .exhibit p a {
-      color:#F0C332;
-      text-decoration:none;
-      transition:all 0.2s ease;
+    nav.catalogue-index li a:hover {
+      text-decoration: underline;
+      color: #FFD200;
+      text-shadow: 0 0 10px rgba(240,195,50,0.5), 0 0 10px rgba(255,255,0,0.5);
     }
-    nav ul li a:hover,
-    .exhibit p a:hover {
-      text-decoration:underline;
-      color:#FFD200;
-      text-shadow:0 0 10px rgba(240,195,50,0.5), 0 0 10px rgba(255,255,0,0.5);
+
+    figure.exhibit {
+      max-width: 720px;
+      margin: 25px 0;
+      border: 10px solid #325;
+      border-radius: 10px;
+      background: #fafafa;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      padding: 25px;
+      transition: border-color 0.5s ease, box-shadow 0.5s ease;
     }
-    .exhibit:target {
-      border-color:#F0C332;
-      box-shadow:0 0 25px rgba(240,195,50,1);
+    figure.exhibit img {
+      display: block;
+      width: 100%;
+      max-width: 540px;          /* default cap */
+      height: auto;
+      border: 5px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 25px rgba(240,195,50,0.5);
+      transition: max-width 0.4s ease;
+    }
+    figure.exhibit img:hover {
+      max-width: 720px;          /* expands on hover */
+    }
+    figcaption {
+      margin-top: 15px;
+      padding: 10px 15px;
+      background: #111;
+      color: #fff;
+      border-radius: 10px;
+      box-shadow: inset 0 0 10px rgba(255,255,255,0.5),
+                  0 0 10px rgba(240,195,50,0.5);
+      font-size: 1em;
+      letter-spacing: 1px;
+    }
+    figcaption span {
+      color: #F0C332;
+    }
+    figure.exhibit p a {
+      color: #F0C332;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    figure.exhibit p a:hover {
+      text-decoration: underline;
+      color: #FFD200;
+      text-shadow: 0 0 10px rgba(240,195,50,0.5), 0 0 10px rgba(255,255,0,0.5);
+    }
+
+    /* Highlight effect when targeted */
+    figure.exhibit:target {
+      border-color: #F0C332;
+      box-shadow: 0 0 25px rgba(240,195,50,1);
     }
   </style>
 </head>
 <body>
+  <!-- Spooky Media Controls at top -->
   <div class="controls">
     <span class="btn">🎃</span>
     <span class="btn">👻</span>
@@ -165,9 +202,12 @@
   <header>D I E !</header>
   <header>SATLD Spooky Radio Hub</header>
 
+  <!-- EXT FAM GHOSTS station card -->
   <div class="station-card">
     <h2>EXT FAM GHOSTS REUNION</h2>
-    <iframe src="https://www.radiojar.com/widget/radio/dz93m1q1qxcwv/player/?trackinfo&show_now&autoplay_off"></iframe>
+    <iframe src="https://www.radiojar.com/widget/radio/dz93m1q1qxcwv/player/?trackinfo&show_now&autoplay_off" scrolling="yes"></iframe>
+
+    <!-- Updated counters to the EXT FAM GHOSTS repo -->
     <div class="counter-container">
       <a href="https://hits.sh/efi-1.github.io/_The-EXT-FAM-GHOSTS-REUNION/">
         <img alt="Daily Hits" src="https://hits.sh/efi-1.github.io/_The-EXT-FAM-GHOSTS-REUNION.svg?view=today-total&style=plastic&label=VISITORS TODAY&color=555555&labelColor=ffa64d"/>
@@ -176,19 +216,65 @@
   </div>
 
   <footer>
-    <section style="max-width: 720px; margin:40px auto; text-align:left; 
-                font-family:'Google Sans Code',sans-serif; font-weight:800;">
-      <!-- Example Exhibit -->
+    <section class="catalogue">
+      <!-- Sticky Table of Contents -->
+      <nav id="topIndex" class="catalogue-index">
+        <h3>Catalogue Index</h3>
+        <ul>
+          <li><a href="#exhibit1">Catalogue No. 01 - EXT Ghosts Reunion</a></li>
+          <li><a href="#exhibit2">Catalogue No. 02 - Placeholder Specimen</a></li>
+          <li><a href="#exhibit3">Catalogue No. 03 - Placeholder Specimen</a></li>
+          <li><a href="#exhibit4">Catalogue No. 04 - "Why I Didn't Do It IRL ('My Ribs').jpg (MS ClipChamp EXCERPT CITATION)"</a></li>
+        </ul>
+      </nav>
+
+      <!-- Exhibit 01 -->
       <figure id="exhibit1" class="exhibit">
         <img src="assets/MY_IMAGINARY_EXT_GHOSTS_FAMILY_REUNION_DAYDREAM.jpeg"
              alt="Specimen Exhibit: EXT Ghosts Reunion" />
         <figcaption>
           Catalogue No. 01 - "EXT Ghosts Reunion"
+          <br><span>Specimen Archive<br>["Weapon of defense, of moral/ethical/discipline instruction, 'ultimate weapon'/Grim Reaper's Gun ('The Jericho ['CONCEALED INNEROBJECT']')."]<br></span>
+        </figcaption>
+        <p><a href="#topIndex">⬆ Back to Index</a></p>
+      </figure>
+
+      <!-- Exhibit 02 -->
+      <figure id="exhibit2" class="exhibit">
+        <img src="assets/PLACEHOLDER JPEG 1.png"
+             alt="Specimen Exhibit: Placeholder 1" />
+        <figcaption>
+          Catalogue No. 02 - "Placeholder Specimen 1"
+          <br><span>Specimen Archive</span>
+        </figcaption>
+        <p><a href="#topIndex">⬆ Back to Index</a></p>
+      </figure>
+
+      <!-- Exhibit 03 -->
+      <figure id="exhibit3" class="exhibit">
+        <img src="assets/PLACEHOLDER JPEG 2.png"
+             alt="Specimen Exhibit: Placeholder 2" />
+        <figcaption>
+          Catalogue No. 03 - "Placeholder Specimen 2"
+          <br><span>Specimen Archive</span>
+        </figcaption>
+        <p><a href="#topIndex">⬆ Back to Index</a></p>
+      </figure>
+
+      <!-- Exhibit 04 -->
+      <figure id="exhibit4" class="exhibit">
+        <img src="assets/WHY I DIDN'T DO IT IRL ('My Ribs').jpeg"
+             alt="Specimen Exhibit: 'Why I Didn't Do It I.R.L. ('My Ribs')'" />
+        <figcaption>
+          Catalogue No. 04 - "'Why I Didn't Do It I.R.L. ('My Ribs')'"
           <br><span>Specimen Archive</span>
         </figcaption>
         <p><a href="#topIndex">⬆ Back to Index</a></p>
       </figure>
     </section>
+
+    <br>
+    <a href="https://hits.sh/efi-1.github.io/_The-EXT-FAM-GHOSTS-REUNION/">STATS</a>
   </footer>
 </body>
 </html>
