@@ -161,7 +161,7 @@
 
   <!-- Exhibit 02 -->
   <figure id="exhibit2" class="exhibit">
-    <img src="assets/PLACEHOLDER1.jpg" alt="Specimen Exhibit: Placeholder 1" />
+    <img src="assets/PLACEHOLDER JPEG 1.png" alt="Specimen Exhibit: Placeholder 1" />
     <figcaption>
       Catalogue No. 02 - "Placeholder Specimen"
       <br><span>Specimen Archive</span>
@@ -171,7 +171,7 @@
 
   <!-- Exhibit 03 -->
   <figure id="exhibit3" class="exhibit">
-    <img src="assets/PLACEHOLDER2.jpg" alt="Specimen Exhibit: Placeholder 2" />
+    <img src="assets/PLACEHOLDER JPEG 2.png" alt="Specimen Exhibit: Placeholder 2" />
     <figcaption>
       Catalogue No. 02 - "Placeholder Specimen"
       <br><span>Specimen Archive</span>
