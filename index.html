@@ -166,7 +166,7 @@
 
   <script>
     function makeBadge(text, cls){ const s=document.createElement('span'); s.textContent=text; s.className=`badge ${cls}`; return s; }
-    function makeClickBanner(){ const b=document.createElement('span'); b.textContent="CLICK-LIVE! MEDICAL CENTER REMIX!"; b.className="remix-banner"; return b; }
+    function makeClickBanner(){ const b=document.createElement('span'); b.textContent="CLICK-RED-4-REMIX!"; b.className="remix-banner"; return b; }
     const banner=document.getElementById('radio-banner');
     const live=makeBadge("LIVE!GHOST","live"), docs=makeBadge("MEDICAL Docs","docs"), radio=makeBadge("Radio","radio"), med=makeBadge("GHOSTLY MEDICAL CENTER (🇺🇸 ONLY)","med");
     [live,docs,radio,med].forEach(b=>banner.appendChild(b)); banner.appendChild(makeClickBanner());
@@ -275,3 +275,4 @@
   </footer>
 </body>
 </html>
+
