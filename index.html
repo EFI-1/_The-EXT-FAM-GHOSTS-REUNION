@@ -1,11 +1,10 @@
-<!DOCTYPE html> <!-- 🧲🇺🇸 If you want to leave notes for yourself or collaborators, put comments inside the HTML (after the doctype). That way you stay standards‑compliant. -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>(🇺🇸 ONLY) SATL!D MEDICALCENTER</title>
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@800&display=swap" rel="stylesheet">
   <style>
-    /* Remix banner styled like LIVE! & MEDICAL CENTER */
     .remix-banner {
       display:inline-block;
       background:#FF0000;
@@ -114,7 +113,7 @@
     }
     footer a { color:#ffa64d; text-decoration:none; }
 
-    .catalogue { max-width:499px; margin:40px 0; }
+    .catalogue { max-width:499px; margin:40px auto; }
     nav.catalogue-index {
       position:sticky; top:0; z-index:1000;
       margin-bottom:25px; padding:15px;
@@ -126,24 +125,26 @@
 
     figure.exhibit {
       max-width:499px;
-      margin:25px 0;
+      margin:25px auto;
       border:10px solid #325;
       border-radius:10px;
       background:#fafafa;
       box-shadow:0 10px 25px rgba(0,0,0,.25);
       padding:20px;
+      text-align:center;
     }
     figure.exhibit img {
       display:block;
       width:360px;              /* default size */
       max-width:1080px;         /* cap */
       height:auto;
+      margin:0 auto;
       border:5px solid #ccc;
       border-radius:5px;
       box-shadow:0 0 25px rgba(240,195,50,.5);
-      transition:transform .4s ease;
+      transition:width .4s ease;
     }
-    figure.exhibit img:hover { transform:scale(2); } /* zoom 200% */
+    figure.exhibit img:hover { width:1080px; } /* zoom to 1080px */
 
     figcaption {
       margin-top:10px;
@@ -154,6 +155,7 @@
       box-shadow:inset 0 0 10px rgba(255,255,255,.5), 0 0 10px rgba(240,195,50,.5);
       font-size:.9em;
       letter-spacing:1px;
+      text-align:center;
     }
     figcaption span { color:#F0C332; }
   </style>
@@ -176,8 +178,7 @@
 
   <div class="station-card">
     <h2>EXT FAM GHOSTS REUNION</h2>
-    <iframe src="https://www.radiojar.com/widget/radio/dz93m1q1qxcwv/player/?trackinfo&show_now&autoplay_off"></iframe
-    <iframe src="https://www.radiojar.com/widget/radio/dz93m1q1qxcwv/player/?trackinfo&show_now&autoplay_off" scrolling="yes"></iframe>
+    <iframe src="https://www.radiojar.com/widget/radio/dz93m1q1qxcwv/player/?trackinfo&show_now&autoplay_off"></iframe>
     <div class="counter-container">
       <a href="https://hits.sh/efi-1.github.io/_The-EXT-FAM-GHOSTS-REUNION/">
         <img alt="Daily Hits" src="https://hits.sh/efi-1.github.io/_The-EXT-FAM-GHOSTS-REUNION.svg?view=today-total&style=plastic&label=VISITORS TODAY&color=555555&labelColor=ffa64d"/>
@@ -274,6 +275,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
