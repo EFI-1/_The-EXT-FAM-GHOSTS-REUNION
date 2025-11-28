@@ -1,8 +1,8 @@
-<!DOCTYPE html> <!-- 🧲🇺🇸 If you want to leave notes for yourself or collaborators, put comments inside the HTML (after the doctype). That way you stay standards‑compliant. -->
+<!DOCTYPE html> <!-- 🧲 If you want to leave notes for yourself or collaborators, put comments inside the HTML (after the doctype). That way you stay standards‑compliant. -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>(🇺🇸 ONLY) SATL!D MEDICALCENTER</title>
+  <title>EXTFAM MEDICALCENTER</title>
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@800&display=swap" rel="stylesheet">
   <style>
     .remix-banner {
@@ -168,7 +168,7 @@
     function makeBadge(text, cls){ const s=document.createElement('span'); s.textContent=text; s.className=`badge ${cls}`; return s; }
     function makeClickBanner(){ const b=document.createElement('span'); b.textContent="<CLICK ME!"; b.className="remix-banner"; return b; }
     const banner=document.getElementById('radio-banner');
-    const live=makeBadge("LIVE!GHOST","live"), docs=makeBadge("MEDICAL Docs","docs"), radio=makeBadge("Radio","radio"), med=makeBadge("GHOSTLY MEDICAL CENTER (🇺🇸 ONLY)","med");
+    const live=makeBadge("LIVE!GHOST","live"), docs=makeBadge("MEDICAL Docs","docs"), radio=makeBadge("Radio","radio"), med=makeBadge("EXT FAM <b><u>GHOST</b></u> MEDICAL CENTER","med");
     [live,docs,radio,med].forEach(b=>banner.appendChild(b)); banner.appendChild(makeClickBanner());
     function randomizeFade(span){ const dur=(Math.random()*3+2).toFixed(1), del=(Math.random()*2).toFixed(1); span.style.animation=`fadeText ${dur}s infinite alternate`; span.style.animationDelay=`${del}s`; }
     [docs,radio].forEach(randomizeFade);
@@ -275,5 +275,6 @@
   </footer>
 </body>
 </html>
+
 
 
