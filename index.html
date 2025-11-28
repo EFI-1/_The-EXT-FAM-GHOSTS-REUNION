@@ -1,4 +1,4 @@
-<!DOCTYPE html> <!-- 🧲🇺🇸 If you want to leave notes for yourself or collaborators, put comments inside the HTML (after the doctype). That way you stay standards‑compliant. -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,8 +8,8 @@
     /* Remix banner styled like LIVE! & MEDICAL CENTER */
     .remix-banner {
       display:inline-block;
-      background:#FF0000;   /* red highlight */
-      color:#FFFFFF;        /* white font */
+      background:#FF0000;
+      color:#FFFFFF;
       font-weight:bold;
       font-family:'Google Sans Code', sans-serif;
       text-transform:uppercase;
@@ -20,88 +20,63 @@
       box-shadow:0 0 10px rgba(255,0,0,0.8), 0 0 20px rgba(255,0,0,0.6);
     }
 
-    html, body { margin: 0; padding: 0; }
+    html, body { margin:0; padding:0; }
     body {
       background: linear-gradient(251deg, #191932, #010000);
-      color: #FFFFFF;
-      font-family: 'Google Sans Code', sans-serif;
-      text-align: left;
-      padding: 50px;
-      font-weight: 800;
+      color:#fff;
+      font-family:'Google Sans Code', sans-serif;
+      text-align:left;
+      padding:50px;
+      font-weight:800;
     }
 
-    /* Title styles */
     header, h2 {
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
-      color: #ffa64d;
-      text-shadow:
-        2px 2px 4px #000,
-        0 0 10px rgba(255, 125, 25, 0.5),
-        0 0 20px rgba(255, 125, 25, 0.5);
-      text-align: left;
+      text-transform:uppercase;
+      letter-spacing:2.5px;
+      color:#ffa64d;
+      text-shadow:2px 2px 4px #000, 0 0 10px rgba(255,125,25,.5), 0 0 20px rgba(255,125,25,.5);
     }
     header {
-      font-size: 2.25em;
-      margin-bottom: 25px;
-      border-bottom: 5px solid #ffa64d;
-      padding-bottom: 11px;
-      box-shadow: 0 5px 11px rgba(255, 125, 25, 0.5);
-      text-align: left;
+      font-size:2.25em;
+      margin-bottom:25px;
+      border-bottom:5px solid #ffa64d;
+      padding-bottom:11px;
+      box-shadow:0 5px 11px rgba(255,125,25,.5);
     }
 
-    /* Top controls */
     .controls {
-      font-size: 1em;
-      margin-bottom: 20px;
-      display: inline-block;
-      background: #222;
-      border-radius: 50px;
-      padding: 10px 20px;
-      box-shadow: 0 0 12px rgba(255, 125, 25, 0.5);
-      text-align: left;
+      font-size:1em;
+      margin-bottom:20px;
+      display:inline-block;
+      background:#222;
+      border-radius:50px;
+      padding:10px 20px;
+      box-shadow:0 0 12px rgba(255,125,25,.5);
     }
     .btn {
-      display: inline-block;
-      margin: 0 10px;
-      font-size: 1em;
-      color: #ffa64d;
-      background: #333;
-      padding: 5px 10px;
-      border-radius: 50%;
-      box-shadow: 0 0 5px rgba(255, 125, 25, 0.5);
+      display:inline-block;
+      margin:0 10px;
+      font-size:1em;
+      color:#ffa64d;
+      background:#333;
+      padding:5px 10px;
+      border-radius:50%;
+      box-shadow:0 0 5px rgba(255,125,25,.5);
     }
 
-    /* Animations */
-    @keyframes flash {
-      from { background-color:#FF0000; box-shadow:0 0 10px rgba(255,0,0,0.8), 0 0 20px rgba(255,0,0,0.6); }
-      to   { background-color:#CC0000; box-shadow:0 0 20px rgba(255,0,0,1), 0 0 40px rgba(255,0,0,0.9); }
-    }
-    @keyframes fadeText {
-      0%   { color:#000000; }
-      50%  { color:#FFFFFF; }
-      100% { color:#000000; }
-    }
+    @keyframes flash { from{background:#f00;} to{background:#c00;} }
+    @keyframes fadeText { 0%{color:#000;} 50%{color:#fff;} 100%{color:#000;} }
     @keyframes colorChaosMax {
-      0%   { background:#FF0000; color:#00FFFF; transform:translateX(0); }
-      20%  { background:#00FF00; color:#FF6600; transform:translateX(-2px); }
-      40%  { background:#0000FF; color:#FFFF00; transform:translateX(2px); }
-      60%  { background:#FFFF00; color:#000000; transform:translateX(-3px); }
-      80%  { background:#FF6600; color:#FFFFFF; transform:translateX(3px); }
-      100% { background:#FF00FF; color:#FFFFFF; transform:translateX(0); }
+      0%{background:#f00; color:#0ff;}
+      20%{background:#0f0; color:#f60;}
+      40%{background:#00f; color:#ff0;}
+      60%{background:#ff0; color:#000;}
+      80%{background:#f60; color:#fff;}
+      100%{background:#f0f; color:#fff;}
     }
-    @keyframes magentaPulse {
-      0%   { background:#FF00FF; color:#FFFFFF; transform:scale(1); }
-      50%  { background:#FF00FF; color:#FFFFFF; transform:scale(1.1); }
-      100% { background:#FF00FF; color:#FFFFFF; transform:scale(1); }
-    }
-    @keyframes fadeBack {
-      0%   { background:#FF00FF; color:#FFFFFF; }
-      50%  { background:#CC0033; color:#FFFFFF; }
-      100% { background:#FF0000; color:#FFFFFF; }
-    }
+    @keyframes magentaPulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.1);} }
+    @keyframes fadeBack { 0%{background:#f0f;} 50%{background:#c33;} 100%{background:#f00;} }
 
-    /* Badges */
     .badge {
       display:inline-block;
       font-weight:bold;
@@ -111,235 +86,97 @@
       text-transform:uppercase;
       letter-spacing:2px;
       margin-right:6px;
+      cursor:pointer;
     }
-    .live { background:#FF0000; color:#FFFFFF; animation:flash 1s infinite alternate; cursor:pointer; }
-    .docs, .radio { background:#FFFFFF; color:#000000; cursor:pointer; }
-    .med { background:#FF0000; color:#FFFFFF; animation:flash 1s infinite alternate; cursor:pointer; }
+    .live, .med { background:#f00; color:#fff; animation:flash 1s infinite alternate; }
+    .docs, .radio { background:#fff; color:#000; }
 
-    /* Remix sequence applied when .animate is added */
-    .live.animate, .docs.animate, .med.animate {
-      animation: colorChaosMax 1s, magentaPulse 4s 1s, fadeBack 3s 5s forwards;
-    }
+    .animate { animation:colorChaosMax 1s, magentaPulse 4s 1s, fadeBack 3s 5s forwards; }
 
-    /* Click me banners next to badges */
-    .click-banner {
-      display:inline-block;
-      margin-left:8px;
-      font-size:0.9em;
-      color:#FFD200;
-      text-shadow:0 0 5px rgba(255,255,0,0.7);
-    }
-
-    /* Station card */
     .station-card {
-      background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
-      border: 2px solid #ffa64d;
-      border-radius: 25px;
-      padding: 25px;
-      margin: 25px 0;
-      max-width: 400px;
-      box-shadow: 0 0 20px rgba(255, 125, 25, 0.5);
-      text-align: left;
+      background:linear-gradient(145deg,#1e1e1e,#2a2a2a);
+      border:2px solid #ffa64d;
+      border-radius:25px;
+      padding:25px;
+      margin:25px 0;
+      max-width:400px;
+      box-shadow:0 0 20px rgba(255,125,25,.5);
     }
-    iframe {
-      border: none;
-      width: 100%;
-      max-width: 400px;
-      height: 400px;
-      border-radius: 10px;
-      display: block;
-      margin-left: 0;
-    }
-    .counter-container {
-      margin-top: 20px;
-      text-align: left;
-    }
-    .counter-container img {
-      display: block;
-      margin-left: 0;
-      background: #000;
-      padding: 10px;
-      border-radius: 10px;
-      border: 1px solid #ffa64d;
-      box-shadow: inset 0 0 10px #ffa64d;
-    }
+    iframe { width:100%; max-width:400px; height:400px; border:none; border-radius:10px; }
 
-    /* Footer + exhibits */
     footer {
-      margin-top: 50px;
-      font-size: 1em;
-      color: #ffa64d;
-      border-top: 2px solid #ffa64d;
-      padding-top: 10px;
-      box-shadow: 0 -2px 10px rgba(255, 125, 25, 0.5);
-      text-align: left;
+      margin-top:50px;
+      font-size:1em;
+      color:#ffa64d;
+      border-top:2px solid #ffa64d;
+      padding-top:10px;
+      box-shadow:0 -2px 10px rgba(255,125,25,.5);
     }
-    footer a {
-      color: #ffa64d;
-      text-decoration: none;
-    }
+    footer a { color:#ffa64d; text-decoration:none; }
 
-    .catalogue {
-      max-width: 480px;
-      margin: 40px 0;
-      text-align: left;
-    }
+    .catalogue { max-width:499px; margin:40px 0; }
     nav.catalogue-index {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      margin-bottom: 25px;
-      padding: 15px;
-      background: #f0f0f0;
-      border: 5px solid #325;
-      border-radius: 10px;
-      box-shadow: 0 1px 5px rgba(0,0,0,0.2);
-      text-align: left;
+      position:sticky; top:0; z-index:1000;
+      margin-bottom:25px; padding:15px;
+      background:#f0f0f0; border:5px solid #325; border-radius:10px;
     }
-    nav.catalogue-index h3 { margin-top: 0; color: #125; }
-    nav.catalogue-index ul { list-style: none; padding-left: 0; margin: 0; line-height: 2; }
-    nav.catalogue-index li a {
-      color: #F0C332;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-    nav.catalogue-index li a:hover {
-      text-decoration: underline;
-      color: #FFD200;
-      text-shadow: 0 0 10px rgba(240,195,50,0.5), 0 0 10px rgba(255,255,0,0.5);
-    }
+    nav.catalogue-index ul { list-style:none; padding:0; margin:0; line-height:2; }
+    nav.catalogue-index li a { color:#F0C332; text-decoration:none; }
+    nav.catalogue-index li a:hover { text-decoration:underline; color:#FFD200; }
 
     figure.exhibit {
-      max-width: 360px;
-      margin: 25px 0;
-      border: 10px solid #325;
-      border-radius: 10px;
-      background: #fafafa;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-      padding: 25px;
-      transition: border-color 0.5s ease, box-shadow 0.5s ease;
-      text-align: left;
+      max-width:499px;
+      margin:25px 0;
+      border:10px solid #325;
+      border-radius:10px;
+      background:#fafafa;
+      box-shadow:0 10px 25px rgba(0,0,0,.25);
+      padding:20px;
     }
     figure.exhibit img {
-      display: block;
-      width: 100%;
-      max-width: 1080px;
-      height: auto;
-      border: 5px solid #ccc;
-      border-radius: 5px;
-      box-shadow: 0 0 25px rgba(240,195,50,0.5);
-      transition: max-width 0.4s ease;
-      margin-left: 0;
+      display:block;
+      width:360px;              /* default size */
+      max-width:1080px;         /* cap */
+      height:auto;
+      border:5px solid #ccc;
+      border-radius:5px;
+      box-shadow:0 0 25px rgba(240,195,50,.5);
+      transition:transform .4s ease;
     }
-    figure.exhibit img:hover { width: 100%; }
+    figure.exhibit img:hover { transform:scale(2); } /* zoom 200% */
+
     figcaption {
-      margin-top: 15px;
-      padding: 10px 15px;
-      background: #111;
-      color: #fff;
-      border-radius: 10px;
-      box-shadow: inset 0 0 10px rgba(255,255,255,0.5),
-                  0 0 10px rgba(240,195,50,0.5);
-      font-size: 1em;
-      letter-spacing: 1px;
-      text-align: left;
+      margin-top:10px;
+      padding:8px 12px;
+      background:#111;
+      color:#fff;
+      border-radius:8px;
+      box-shadow:inset 0 0 10px rgba(255,255,255,.5), 0 0 10px rgba(240,195,50,.5);
+      font-size:.9em;
+      letter-spacing:1px;
     }
-    figcaption span { color: #F0C332; }
-    figure.exhibit p a {
-      color: #F0C332;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-    figure.exhibit p a:hover {
-      text-decoration: underline;
-      color: #FFD200;
-      text-shadow: 0 0 10px rgba(240,195,50,0.5), 0 0 10px rgba(255,255,0,0.5);
-    }
-    figure.exhibit:target {
-      border-color: #F0C332;
-      box-shadow: 0 0 25px rgba(240,195,50,1);
-    }
+    figcaption span { color:#F0C332; }
   </style>
 </head>
 <body>
-  <!-- Spooky Media Controls at top -->
-  <div class="controls">
-    <span class="btn">🆕 (🇺🇸 ONLY)</span>
-  </div>
-
-  <br><br><br><br><br><br>CLICK-🔔LIVE!👻🇺🇸MEDICALCENTER🔔-4-REMIX!->
-
-  <!-- Animated header banner -->
+  <div class="controls"><span class="btn">🆕 (🇺🇸 ONLY)</span></div>
   <header id="radio-banner"></header>
 
   <script>
-    // Helper to make a styled badge span
-    function makeBadge(text, className) {
-      const span = document.createElement('span');
-      span.textContent = text;
-      span.className = `badge ${className}`;
-      return span;
-    }
-
-    // Helper to make a styled remix banner (static style, no animation)
-    function makeClickBanner() {
-      const b = document.createElement('span');
-      b.textContent = "🆕";
-      b.className = "remix-banner";
-      return b;
-    }
-
-    const banner = document.getElementById('radio-banner');
-
-    // Create badges
-    const live = makeBadge("LIVE!GHOST", "live");
-    banner.appendChild(live);
-
-    const docs = makeBadge("MEDICAL Docs ", "docs");
-    banner.appendChild(docs);
-
-    const radio = makeBadge("Radio ", "radio");
-    banner.appendChild(radio);
-
-    const med = makeBadge("GHOSTLY MEDICAL CENTER (🇺🇸 ONLY)", "med");
-    banner.appendChild(med);
-
-    // Styled banner appended after MEDICAL CENTER
-    banner.appendChild(makeClickBanner());
-
-    // Randomize fade timings for Docs and Radio (organic rhythm)
-    function randomizeFade(span) {
-      const duration = (Math.random() * 3 + 2).toFixed(1); // 2–5s
-      const delay = (Math.random() * 2).toFixed(1);        // 0–2s
-      span.style.animation = `fadeText ${duration}s infinite alternate`;
-      span.style.animationDelay = `${delay}s`;
-    }
-    randomizeFade(docs);
-    randomizeFade(radio);
-
-    // Click remix for LIVE!, Docs, and MEDICAL CENTER
-    [live, docs, med].forEach(badge => {
-      badge.addEventListener('click', () => {
-        badge.classList.remove('animate');
-        void badge.offsetWidth; // force reflow
-        badge.classList.add('animate');
-        setTimeout(() => { badge.classList.remove('animate'); }, 8000); // 1s + 4s + 3s
-      });
-    });
-
-    // Auto-remix every 1 minute
-    setInterval(() => {
-      [live, docs, med].forEach(badge => {
-        badge.classList.remove('animate');
-        void badge.offsetWidth;
-        badge.classList.add('animate');
-        setTimeout(() => { badge.classList.remove('animate'); }, 8000);
-      });
-    }, 60000);
+    function makeBadge(text, cls){ const s=document.createElement('span'); s.textContent=text; s.className=`badge ${cls}`; return s; }
+    function makeClickBanner(){ const b=document.createElement('span'); b.textContent="CLICK-LIVE! MEDICAL CENTER REMIX!"; b.className="remix-banner"; return b; }
+    const banner=document.getElementById('radio-banner');
+    const live=makeBadge("LIVE!GHOST","live"), docs=makeBadge("MEDICAL Docs","docs"), radio=makeBadge("Radio","radio"), med=makeBadge("GHOSTLY MEDICAL CENTER (🇺🇸 ONLY)","med");
+    [live,docs,radio,med].forEach(b=>banner.appendChild(b)); banner.appendChild(makeClickBanner());
+    function randomizeFade(span){ const dur=(Math.random()*3+2).toFixed(1), del=(Math.random()*2).toFixed(1); span.style.animation=`fadeText ${dur}s infinite alternate`; span.style.animationDelay=`${del}s`; }
+    [docs,radio].forEach(randomizeFade);
+    [live,docs,med].forEach(b=>b.addEventListener('click',()=>{ b.classList.remove('animate'); void b.offsetWidth; b.classList.add('animate'); setTimeout(()=>b.classList.remove('animate'),8000); }));
+    setInterval(()=>{ [live,docs,med].forEach(b=>{ b.classList.remove('animate'); void b.offsetWidth; b.classList.add('animate'); setTimeout(()=>b.classList.remove('animate'),8000); }); },60000);
   </script>
-  <!-- Station card -->
+
   <div class="station-card">
     <h2>EXT FAM GHOSTS REUNION</h2>
+    <iframe src="https://www.radiojar.com/widget/radio/dz93m1q1qxcwv/player/?trackinfo&show_now&autoplay_off"></iframe
     <iframe src="https://www.radiojar.com/widget/radio/dz93m1q1qxcwv/player/?trackinfo&show_now&autoplay_off" scrolling="yes"></iframe>
     <div class="counter-container">
       <a href="https://hits.sh/efi-1.github.io/_The-EXT-FAM-GHOSTS-REUNION/">
@@ -437,4 +274,5 @@
   </footer>
 </body>
 </html>
+
 
