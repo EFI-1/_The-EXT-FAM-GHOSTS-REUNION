@@ -1,11 +1,10 @@
-<!DOCTYPE html> <!-- 🧲🇺🇲 If you want to leave notes for yourself or collaborators, put comments inside the HTML (after the doctype). That way you stay standards‑compliant. -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>MEDICAL SCENTER (IMAGINARY)</title>
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@800&display=swap" rel="stylesheet">
   <style>
-    /* Global left-justify baseline */
     html, body { margin: 0; padding: 0; }
     body {
       background: linear-gradient(251deg, #191932, #010000);
@@ -16,7 +15,7 @@
       font-weight: 800;
     }
 
-    /* Spooky orange title style */
+    /* Title styles */
     header, h2 {
       text-transform: uppercase;
       letter-spacing: 2.5px;
@@ -27,7 +26,6 @@
         0 0 20px rgba(255, 125, 25, 0.5);
       text-align: left;
     }
-
     header {
       font-size: 2.25em;
       margin-bottom: 25px;
@@ -37,6 +35,7 @@
       text-align: left;
     }
 
+    /* Top controls */
     .controls {
       margin-bottom: 20px;
       display: inline-block;
@@ -57,7 +56,7 @@
       box-shadow: 0 0 5px rgba(255, 125, 25, 0.5);
     }
 
-    /* Badge animations */
+    /* Animations */
     @keyframes flash {
       from { background-color:#FF0000; box-shadow:0 0 10px rgba(255,0,0,0.8), 0 0 20px rgba(255,0,0,0.6); }
       to   { background-color:#CC0000; box-shadow:0 0 20px rgba(255,0,0,1), 0 0 40px rgba(255,0,0,0.9); }
@@ -86,6 +85,7 @@
       100% { background:#FF0000; color:#FFFFFF; }
     }
 
+    /* Badges */
     .badge {
       display:inline-block;
       font-weight:bold;
@@ -96,10 +96,23 @@
       letter-spacing:2px;
       margin-right:6px;
     }
-    .live { background:#FF0000; color:#FFFFFF; animation:flash 1s infinite alternate; }
-    .docs, .radio { background:#FFFFFF; color:#000000; }
+    .live { background:#FF0000; color:#FFFFFF; animation:flash 1s infinite alternate; cursor:pointer; }
+    .docs, .radio { background:#FFFFFF; color:#000000; cursor:pointer; }
     .med { background:#FF0000; color:#FFFFFF; animation:flash 1s infinite alternate; cursor:pointer; }
-    .med.animate { animation:colorChaosMax 1s, magentaPulse 4s 1s, fadeBack 3s 5s forwards; }
+
+    /* Remix sequence applied when .animate is added */
+    .live.animate, .docs.animate, .med.animate {
+      animation: colorChaosMax 1s, magentaPulse 4s 1s, fadeBack 3s 5s forwards;
+    }
+
+    /* Click me banners next to badges */
+    .click-banner {
+      display:inline-block;
+      margin-left:8px;
+      font-size:0.9em;
+      color:#FFD200;
+      text-shadow:0 0 5px rgba(255,255,0,0.7);
+    }
 
     /* Station card */
     .station-card {
@@ -107,7 +120,7 @@
       border: 2px solid #ffa64d;
       border-radius: 25px;
       padding: 25px;
-      margin: 25px 0;          /* left-justified: no auto centering */
+      margin: 25px 0;
       max-width: 400px;
       box-shadow: 0 0 20px rgba(255, 125, 25, 0.5);
       text-align: left;
@@ -119,7 +132,7 @@
       height: 400px;
       border-radius: 10px;
       display: block;
-      margin-left: 0;          /* left anchor */
+      margin-left: 0;
     }
     .counter-container {
       margin-top: 20px;
@@ -127,7 +140,7 @@
     }
     .counter-container img {
       display: block;
-      margin: 10px 0 0 0;      /* left-justified */
+      margin-left: 0;
       background: #000;
       padding: 10px;
       border-radius: 10px;
@@ -152,7 +165,7 @@
 
     .catalogue {
       max-width: 720px;
-      margin: 40px 0;          /* left-justified: no auto */
+      margin: 40px 0;
       text-align: left;
     }
     nav.catalogue-index {
@@ -182,7 +195,7 @@
 
     figure.exhibit {
       max-width: 720px;
-      margin: 25px 0;          /* left-justified: no auto */
+      margin: 25px 0;
       border: 10px solid #325;
       border-radius: 10px;
       background: #fafafa;
@@ -200,10 +213,9 @@
       border-radius: 5px;
       box-shadow: 0 0 25px rgba(240,195,50,0.5);
       transition: max-width 0.4s ease;
-      margin-left: 0;          /* left anchor */
+      margin-left: 0;
     }
     figure.exhibit img:hover { max-width: 720px; }
-
     figcaption {
       margin-top: 15px;
       padding: 10px 15px;
@@ -217,7 +229,6 @@
       text-align: left;
     }
     figcaption span { color: #F0C332; }
-
     figure.exhibit p a {
       color: #F0C332;
       text-decoration: none;
@@ -252,17 +263,34 @@
       span.className = `badge ${className}`;
       return span;
     }
+    // Helper to make a "Click me!" banner
+    function makeClickBanner() {
+      const b = document.createElement('span');
+      b.textContent = "Click me!";
+      b.className = "click-banner";
+      return b;
+    }
 
     const banner = document.getElementById('radio-banner');
-    banner.appendChild(makeBadge("LIVE!", "med"));
+
+    // Create badges
+    const live = makeBadge("LIVE!", "live");
+    banner.appendChild(live);
+    banner.appendChild(makeClickBanner());
+
     const docs = makeBadge("Docs", "docs");
-    banner.appendChild(med);
+    banner.appendChild(docs);
+    banner.appendChild(makeClickBanner());
+
     const radio = makeBadge("Radio", "radio");
     banner.appendChild(radio);
+    banner.appendChild(makeClickBanner());
+
     const med = makeBadge("MEDICAL CENTER", "med");
     banner.appendChild(med);
+    banner.appendChild(makeClickBanner());
 
-    // Randomize fade timings for Docs and Radio
+    // Randomize fade timings for Docs and Radio (organic rhythm)
     function randomizeFade(span) {
       const duration = (Math.random() * 3 + 2).toFixed(1); // 2–5s
       const delay = (Math.random() * 2).toFixed(1);        // 0–2s
@@ -272,15 +300,25 @@
     randomizeFade(docs);
     randomizeFade(radio);
 
-    // MEDICAL CENTER click animation (chaos → magenta pulse → fade back)
-    med.addEventListener('click', () => {
-      med.classList.remove('animate');
-      void med.offsetWidth; // force reflow to restart
-      med.classList.add('animate');
-      setTimeout(() => {
-        med.classList.remove('animate');
-      }, 8000); // 1s + 4s + 3s
+    // Click remix for LIVE!, Docs, and MEDICAL CENTER
+    [live, docs, med].forEach(badge => {
+      badge.addEventListener('click', () => {
+        badge.classList.remove('animate');
+        void badge.offsetWidth; // force reflow
+        badge.classList.add('animate');
+        setTimeout(() => { badge.classList.remove('animate'); }, 8000); // 1s + 4s + 3s
+      });
     });
+
+    // Auto-remix every 1 minute
+    setInterval(() => {
+      [live, docs, med].forEach(badge => {
+        badge.classList.remove('animate');
+        void badge.offsetWidth;
+        badge.classList.add('animate');
+        setTimeout(() => { badge.classList.remove('animate'); }, 8000);
+      });
+    }, 60000);
   </script>
 
   <!-- Station card -->
