@@ -199,70 +199,68 @@
     <span class="btn">👻</span>
   </div>
 
-  <header>D I E !</header>
-  <header>(IMAGINARY) Saturday AT <u>THE</u> <span style="
-  display:inline-block;
-  background-color:#FF0000;   /* bright red background */
-  color:#FFFFFF;              /* white text */
-  font-weight:bold;
-  font-family:Arial, Helvetica, sans-serif;
-  padding:6px 12px;
-  border-radius:4px;
-  text-transform:uppercase;
-  letter-spacing:2px;
-  box-shadow:0 0 8px rgba(255,0,0,0.8), 0 0 16px rgba(255,0,0,0.6);
-">
-  LIVE!
-</span>
-
- Docs-S.A.T.L.D.-Spooky Radio Hub <span style="
-  background-color:#FF0000;   /* red highlight */
-  color:#FFFFFF;              /* white text */
-  padding:0.2em 0.5em;        /* small spacing around text */
-  border-radius:5px;
-  animation:emergencyFlickerShake 5s infinite;
-">
+  <!-- <header>D I E !</header> -->
+  
+  <header>Docs-S.A.T.L.D.-Spooky Radio Hub 
+<span class="med-sign">
   MEDICAL CENTER
 </span>
 
 <style>
+/* Baseline flicker + shake (always running) */
 @keyframes emergencyFlickerShake {
-  0% {
-    background-color:#FF0000;
-    transform:scale(1) translateX(0);
-    box-shadow:0 0 5px rgba(255,0,0,0.4), 0 0 10px rgba(255,0,0,0.5);
-    opacity:1;
-  }
-  10% {
-    opacity:0.1;
-    transform:translateX(-1px);
-  }
-  25% {
-    opacity:0.25;
-    transform:scale(1.05) translateX(2px);
-  }
-  50% {
-    background-color:#CC0000;
-    transform:scale(1) translateX(-2px);
-    box-shadow:0 0 20px rgba(255,0,0,1), 0 0 40px rgba(255,0,0,0.5);
-    opacity:1;
-  }
-  80% {
-    opacity:0.8;
-    transform:translateX(1px);
-  }
-  90% {
-    opacity:.9;
-    transform:translateX(0);
-  }
-  100% {
-    background-color:#FF0000;
-    transform:scale(1) translateX(0);
-    box-shadow:0 0 5px rgba(255,0,0,0.5), 0 0 10px rgba(255,0,0,0.5);
-    opacity:1;
-  }
+  0%   { background-color:#FF0000; color:#FFFFFF; transform:scale(1) translateX(0);
+         box-shadow:0 0 5px rgba(255,0,0,0.4), 0 0 10px rgba(255,0,0,0.5); opacity:1; }
+  10%  { opacity:0.1; transform:translateX(-1px); }
+  25%  { opacity:0.25; transform:scale(1.05) translateX(2px); }
+  50%  { background-color:#CC0000; transform:scale(1) translateX(-2px);
+         box-shadow:0 0 20px rgba(255,0,0,1), 0 0 40px rgba(255,0,0,0.5); opacity:1; }
+  80%  { opacity:0.8; transform:translateX(1px); }
+  90%  { opacity:.9; transform:translateX(0); }
+  100% { background-color:#FF0000; color:#FFFFFF; transform:scale(1) translateX(0);
+         box-shadow:0 0 5px rgba(255,0,0,0.5), 0 0 10px rgba(255,0,0,0.5); opacity:1; }
 }
-</style></header>
+
+/* Chaos scramble (fast random colors for 2s) */
+@keyframes colorChaos {
+  0%   { background-color:#FF0000; color:#00FFFF; box-shadow:0 0 10px lime, 0 0 20px blue; }
+  20%  { background-color:#00FF00; color:#FF6600; box-shadow:0 0 15px purple, 0 0 25px orange; }
+  40%  { background-color:#0000FF; color:#FFFF00; box-shadow:0 0 20px yellow, 0 0 30px cyan; }
+  60%  { background-color:#FFFF00; color:#000000; box-shadow:0 0 25px magenta, 0 0 35px green; }
+  80%  { background-color:#FF6600; color:#FFFFFF; box-shadow:0 0 30px teal, 0 0 40px pink; }
+  100% { background-color:#FF00FF; color:#FFFFFF; box-shadow:0 0 35px #FF00FF, 0 0 50px #FF00FF; }
+}
+
+/* Magenta hold with pulse/breathe effect for 4s */
+@keyframes magentaPulse {
+  0%   { background-color:#FF00FF; color:#FFFFFF; transform:scale(1); box-shadow:0 0 20px #FF00FF, 0 0 40px #FF00FF; }
+  50%  { background-color:#FF00FF; color:#FFFFFF; transform:scale(1.1); box-shadow:0 0 40px #FF00FF, 0 0 60px #FF00FF; }
+  100% { background-color:#FF00FF; color:#FFFFFF; transform:scale(1); box-shadow:0 0 20px #FF00FF, 0 0 40px #FF00FF; }
+}
+
+/* Fade back to red baseline with easing */
+@keyframes fadeBack {
+  0%   { background-color:#FF00FF; color:#FFFFFF; box-shadow:0 0 35px #FF00FF, 0 0 50px #FF00FF; transform:scale(1); }
+  50%  { background-color:#CC0033; color:#FFFFFF; box-shadow:0 0 20px rgba(255,0,0,0.7), 0 0 40px rgba(255,0,0,0.5); transform:scale(1.05); }
+  100% { background-color:#FF0000; color:#FFFFFF; box-shadow:0 0 5px rgba(255,0,0,0.5), 0 0 10px rgba(255,0,0,0.5); transform:scale(1); }
+}
+
+.med-sign {
+  background-color:#FF0000;
+  color:#FFFFFF;
+  padding:0.2em 0.5em;
+  border-radius:5px;
+  display:inline-block;
+  animation:emergencyFlickerShake 5s infinite;
+  cursor:pointer;
+}
+
+/* On click: chain chaos → magenta pulse → fade back */
+.med-sign:active {
+  animation:colorChaos 2s, magentaPulse 4s 2s, fadeBack 3s 6s forwards;
+}
+</style>
+</header>
 
   <!-- EXT FAM GHOSTS station card -->
   <div class="station-card">
@@ -429,6 +427,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
