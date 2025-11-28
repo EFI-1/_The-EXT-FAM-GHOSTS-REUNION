@@ -200,33 +200,206 @@
   </div>
 
   <!-- <header>D I E !</header> -->
-  
-  <header><span style="
-  display:inline-block;
-  background-color:#FF0000;   /* bright red background */
-  color:#FFFFFF;              /* white text */
-  font-weight:bold;
-  font-family:Arial, Helvetica, sans-serif;
-  padding:6px 14px;
-  border-radius:4px;
-  text-transform:uppercase;
-  letter-spacing:2px;
-  box-shadow:0 0 10px rgba(255,0,0,0.8), 0 0 20px rgba(255,0,0,0.6);
-  animation:flash 1s infinite alternate;
-">LIVE!</span>Docs-Spooky Radio<span style="
-  display:inline-block;
-  background-color:#FF0000;   /* bright red background */
-  color:#FFFFFF;              /* white text */
-  font-weight:bold;
-  font-family:Arial, Helvetica, sans-serif;
-  padding:6px 14px;
-  border-radius:4px;
-  text-transform:uppercase;
-  letter-spacing:2px;
-  box-shadow:0 0 10px rgba(255,0,0,0.8), 0 0 20px rgba(255,0,0,0.6);
-  animation:flash 1s infinite alternate;
-"> MEDICAL CENTER
-</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header>
+<div id="radio-banner"></div>
+
 <style>
 @keyframes flash {
   from {
@@ -238,7 +411,100 @@
     box-shadow:0 0 20px rgba(255,0,0,1), 0 0 40px rgba(255,0,0,0.9);
   }
 }
+
+/* Fade text from black to white and back */
+@keyframes fadeText {
+  0%   { color:#000000; }
+  50%  { color:#FFFFFF; }
+  100% { color:#000000; }
+}
 </style>
+
+<script>
+// helper to make a styled span
+function makeBadge(text, styles) {
+  const span = document.createElement('span');
+  span.textContent = text;
+  Object.assign(span.style, styles);
+  return span;
+}
+
+const banner = document.getElementById('radio-banner');
+
+// LIVE! badge
+const liveBadge = makeBadge("LIVE!", {
+  display:"inline-block",
+  backgroundColor:"#FF0000",
+  color:"#FFFFFF",
+  fontWeight:"bold",
+  fontFamily:"Arial, Helvetica, sans-serif",
+  padding:"6px 14px",
+  borderRadius:"4px",
+  textTransform:"uppercase",
+  letterSpacing:"2px",
+  boxShadow:"0 0 10px rgba(255,0,0,0.8), 0 0 20px rgba(255,0,0,0.6)",
+  animation:"flash 1s infinite alternate",
+  marginRight:"6px"
+});
+banner.appendChild(liveBadge);
+
+// Docs badge (random fade timing)
+const docsBadge = makeBadge("Docs", {
+  display:"inline-block",
+  backgroundColor:"#FFFFFF",
+  color:"#000000",
+  fontWeight:"bold",
+  fontFamily:"Arial, Helvetica, sans-serif",
+  padding:"6px 14px",
+  borderRadius:"4px",
+  textTransform:"uppercase",
+  letterSpacing:"2px",
+  marginRight:"6px"
+});
+banner.appendChild(docsBadge);
+
+// Radio badge (random fade timing)
+const radioBadge = makeBadge("Radio", {
+  display:"inline-block",
+  backgroundColor:"#FFFFFF",
+  color:"#000000",
+  fontWeight:"bold",
+  fontFamily:"Arial, Helvetica, sans-serif",
+  padding:"6px 14px",
+  borderRadius:"4px",
+  textTransform:"uppercase",
+  letterSpacing:"2px",
+  marginRight:"6px"
+});
+banner.appendChild(radioBadge);
+
+// MEDICAL CENTER badge
+const medBadge = makeBadge("MEDICAL CENTER", {
+  display:"inline-block",
+  backgroundColor:"#FF0000",
+  color:"#FFFFFF",
+  fontWeight:"bold",
+  fontFamily:"Arial, Helvetica, sans-serif",
+  padding:"6px 14px",
+  borderRadius:"4px",
+  textTransform:"uppercase",
+  letterSpacing:"2px",
+  boxShadow:"0 0 10px rgba(255,0,0,0.8), 0 0 20px rgba(255,0,0,0.6)",
+  animation:"flash 1s infinite alternate"
+});
+banner.appendChild(medBadge);
+
+// Assign random fade timings to Docs and Radio
+function randomizeFade(span) {
+  const duration = (Math.random() * 3 + 2).toFixed(1); // between 2s and 5s
+  const delay = (Math.random() * 2).toFixed(1);        // between 0s and 2s
+  span.style.animation = `fadeText ${duration}s infinite alternate`;
+  span.style.animationDelay = `${delay}s`;
+}
+
+randomizeFade(docsBadge);
+randomizeFade(radioBadge);
+</script>
 </header>
 
   <!-- EXT FAM GHOSTS station card -->
@@ -406,3 +672,4 @@
   </footer>
 </body>
 </html>
+
