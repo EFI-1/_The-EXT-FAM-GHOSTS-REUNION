@@ -5,6 +5,21 @@
   <title>MEDICAL SCENTER (IMAGINARY)</title>
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@800&display=swap" rel="stylesheet">
   <style>
+    /* Remix banner styled like LIVE! & MEDICAL CENTER */
+    .remix-banner {
+      display:inline-block;
+      background:#FF0000;   /* red highlight */
+      color:#FFFFFF;        /* white font */
+      font-weight:bold;
+      font-family:'Google Sans Code', sans-serif;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      padding:6px 14px;
+      border-radius:4px;
+      margin-left:8px;
+      box-shadow:0 0 10px rgba(255,0,0,0.8), 0 0 20px rgba(255,0,0,0.6);
+    }
+
     html, body { margin: 0; padding: 0; }
     body {
       background: linear-gradient(251deg, #191932, #010000);
@@ -263,11 +278,12 @@
       span.className = `badge ${className}`;
       return span;
     }
-    // Helper to make a "Click me!" banner
+
+    // Helper to make a styled remix banner (static style, no animation)
     function makeClickBanner() {
       const b = document.createElement('span');
-      b.textContent = "<-["🔔➊ CLICK-LIVE!MEDICAL CENTER-4-REMIX! ➊🔔"];
-      b.className = "click-banner";
+      b.textContent = "<-[''🔔➊ CLICK-LIVE!MEDICALCENTER-4-REMIX! ➊🔔'']";
+      b.className = "remix-banner";
       return b;
     }
 
@@ -285,6 +301,8 @@
 
     const med = makeBadge("MEDICAL CENTER", "med");
     banner.appendChild(med);
+
+    // Styled banner appended after MEDICAL CENTER
     banner.appendChild(makeClickBanner());
 
     // Randomize fade timings for Docs and Radio (organic rhythm)
@@ -418,5 +436,3 @@
   </footer>
 </body>
 </html>
-
-
