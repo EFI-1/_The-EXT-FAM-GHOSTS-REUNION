@@ -266,7 +266,7 @@
     // Helper to make a "Click me!" banner
     function makeClickBanner() {
       const b = document.createElement('span');
-      b.textContent = "Click me!";
+      b.textContent = "🔔➊ Click me!";
       b.className = "click-banner";
       return b;
     }
@@ -274,9 +274,9 @@
     const banner = document.getElementById('radio-banner');
 
     // Create badges
+    banner.appendChild(makeClickBanner());
     const live = makeBadge("LIVE!", "live");
     banner.appendChild(live);
-    banner.appendChild(makeClickBanner());
 
     const docs = makeBadge("Docs", "docs");
     banner.appendChild(docs);
@@ -419,5 +419,6 @@
   </footer>
 </body>
 </html>
+
 
 
