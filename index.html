@@ -5,12 +5,13 @@
   <title>MEDICAL SCENTER (IMAGINARY)</title>
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@800&display=swap" rel="stylesheet">
   <style>
+    /* Global left-justify baseline */
+    html, body { margin: 0; padding: 0; }
     body {
       background: linear-gradient(251deg, #191932, #010000);
       color: #FFFFFF;
       font-family: 'Google Sans Code', sans-serif;
       text-align: left;
-      margin: 0;
       padding: 50px;
       font-weight: 800;
     }
@@ -24,6 +25,7 @@
         2px 2px 4px #000,
         0 0 10px rgba(255, 125, 25, 0.5),
         0 0 20px rgba(255, 125, 25, 0.5);
+      text-align: left;
     }
 
     header {
@@ -32,6 +34,7 @@
       border-bottom: 5px solid #ffa64d;
       padding-bottom: 11px;
       box-shadow: 0 5px 11px rgba(255, 125, 25, 0.5);
+      text-align: left;
     }
 
     .controls {
@@ -41,6 +44,7 @@
       border-radius: 50px;
       padding: 10px 20px;
       box-shadow: 0 0 12px rgba(255, 125, 25, 0.5);
+      text-align: left;
     }
     .btn {
       display: inline-block;
@@ -103,9 +107,10 @@
       border: 2px solid #ffa64d;
       border-radius: 25px;
       padding: 25px;
-      margin: 25px auto;
+      margin: 25px 0;          /* left-justified: no auto centering */
       max-width: 400px;
       box-shadow: 0 0 20px rgba(255, 125, 25, 0.5);
+      text-align: left;
     }
     iframe {
       border: none;
@@ -113,13 +118,16 @@
       max-width: 400px;
       height: 400px;
       border-radius: 10px;
+      display: block;
+      margin-left: 0;          /* left anchor */
     }
     .counter-container {
       margin-top: 20px;
+      text-align: left;
     }
     .counter-container img {
       display: block;
-      margin: 10px auto;
+      margin: 10px 0 0 0;      /* left-justified */
       background: #000;
       padding: 10px;
       border-radius: 10px;
@@ -135,6 +143,7 @@
       border-top: 2px solid #ffa64d;
       padding-top: 10px;
       box-shadow: 0 -2px 10px rgba(255, 125, 25, 0.5);
+      text-align: left;
     }
     footer a {
       color: #ffa64d;
@@ -143,7 +152,7 @@
 
     .catalogue {
       max-width: 720px;
-      margin: 40px auto;
+      margin: 40px 0;          /* left-justified: no auto */
       text-align: left;
     }
     nav.catalogue-index {
@@ -156,6 +165,7 @@
       border: 5px solid #325;
       border-radius: 10px;
       box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+      text-align: left;
     }
     nav.catalogue-index h3 { margin-top: 0; color: #125; }
     nav.catalogue-index ul { list-style: none; padding-left: 0; margin: 0; line-height: 2; }
@@ -172,13 +182,14 @@
 
     figure.exhibit {
       max-width: 720px;
-      margin: 25px 0;
+      margin: 25px 0;          /* left-justified: no auto */
       border: 10px solid #325;
       border-radius: 10px;
       background: #fafafa;
       box-shadow: 0 10px 25px rgba(0,0,0,0.25);
       padding: 25px;
       transition: border-color 0.5s ease, box-shadow 0.5s ease;
+      text-align: left;
     }
     figure.exhibit img {
       display: block;
@@ -189,8 +200,10 @@
       border-radius: 5px;
       box-shadow: 0 0 25px rgba(240,195,50,0.5);
       transition: max-width 0.4s ease;
+      margin-left: 0;          /* left anchor */
     }
     figure.exhibit img:hover { max-width: 720px; }
+
     figcaption {
       margin-top: 15px;
       padding: 10px 15px;
@@ -201,8 +214,10 @@
                   0 0 10px rgba(240,195,50,0.5);
       font-size: 1em;
       letter-spacing: 1px;
+      text-align: left;
     }
     figcaption span { color: #F0C332; }
+
     figure.exhibit p a {
       color: #F0C332;
       text-decoration: none;
